@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 500px;
+            height: 500px;
+            background-color: #ccc;
+        }
+
+        .child {
+            width: 60px;
+            height: 60px;
+            background-color: green;
+            
+        }
+        .f {
+            float: left;
+            width: 100px;
+            height: 50px;
+            background-color: blue;
+        }
+        .r {
+            overflow: hidden;
+            width: 200px;
+            height: 120px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="f">
+
+    </div>
+    <div class="r">
+
+    </div>
+    <div class="box">
+        <div class="child">
+            123456
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let ss = '<script>alert(123)<\/script>';
+    let div = document.createElement('div')
+    div.innerText = ss
+    console.log(div.innerHTML);
+
+    console.log('**********************************');
+
+    let str = 'abcdefa'
+    // 查找字符串中第二位的字符是什么
+    console.log(str.charAt(1));
+    // 返回字符串中第二位的unicode值
+    console.log(str.charCodeAt(1));
+    // 拼接字符串
+    console.log(str.concat('123'));
+    // 查找是否存在该字符，是返回索引，否则返回-1
+    console.log(str.indexOf('3'));
+    // 替换字符
+    console.log(str.replace('a', '--'));
+    // 将字符串转换成数组
+    console.log(str.split(''));
+    // 截取字符串0 到 1 的字符
+    console.log(str.slice(0, 2));
+    // 截取字符串第一位开始之后的2位
+    console.log(str.substr(1, 2));
+    // 截取字符串0 到 1 的字符,不支持负数
+    console.log(str.substring(0, 2));
+
+    let arr = ['abc', '123', 'jkl']
+    // 数组后面追加一项
+    arr.push('pp') 
+    console.log(arr);
+    // 数组后面删除一项
+    arr.pop()
+    console.log(arr);
+    // 数组后面追加一项
+    arr.unshift('前面')
+    console.log(arr);
+    // 数组前面删除一项
+    arr.shift()
+    console.log(arr);
+    // 拼接数组
+    console.log(arr.concat([1,2,3])); // 不改变原数组
+    // 将数组转换字符串
+    console.log(arr.join('')); // 不改变原数组
+    // 数组删除或添加项
+    arr.splice(0, 1, '1888')
+    console.log(arr);
+    arr.reverse()
+    console.log(arr);
+    // 数组排序
+    let arr1 = [5, 2, 18,33,20,8]
+    arr1.sort((a, b) => {
+        return Math.random() > 0.5 ? -1 : 1
+    })
+    console.log(arr1);
+</script>
